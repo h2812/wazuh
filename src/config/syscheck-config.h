@@ -504,13 +504,6 @@ char *syscheck_opts2str(char *buf, int buflen, int opts);
 void Free_Syscheck(syscheck_config *config);
 
 /**
- * @brief Frees the memory of a directory_t structure
- *
- * @param dir The directory to be free'd
- */
-void free_directory(directory_t *dir);
-
-/**
  * @brief Logs the real time engine status
  *
  */
