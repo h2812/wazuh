@@ -504,12 +504,11 @@ char *syscheck_opts2str(char *buf, int buflen, int opts);
 void Free_Syscheck(syscheck_config *config);
 
 /**
- * @brief Transforms an ASCII text to HEX
+ * @brief Frees the memory of a directory_t structure
  *
- * @param input The input text to transform
- * @return The HEX string on success, the original string on failure
+ * @param dir The directory to be free'd
  */
-char *check_ascci_hex(char *input);
+void free_directory(directory_t *dir);
 
 /**
  * @brief Logs the real time engine status
