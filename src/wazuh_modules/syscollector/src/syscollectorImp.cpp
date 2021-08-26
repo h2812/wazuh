@@ -30,8 +30,7 @@ do                                                                      \
     {                                                                   \
         if(m_logFunction)                                               \
         {                                                               \
-            const std::string error{"task: " + std::string{ex.what()}}; \
-            m_logFunction(SYS_LOG_ERROR, error);                        \
+            m_logFunction(SYS_LOG_ERROR, std::string{ex.what()});       \
         }                                                               \
     }                                                                   \
 }while(0)
@@ -1237,7 +1236,7 @@ nlohmann::json Syscollector::getOSData()
 {
     nlohmann::json ret;
     ret[0] = m_spInfo->os();
-    ret[0]["checksum"] = getItemChecksum(ret[0]);
+    ret[0]["checksum"] = std::to_string(std::chrono::system_clock::now().time_since_epoch().count());
     return ret;
 }
 
