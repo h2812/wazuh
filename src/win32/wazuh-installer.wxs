@@ -333,22 +333,32 @@
                     <Component Id="MANAGE_AGENTS.EXE" DiskId="1" Guid="C15C5883-00FB-41D7-B7E6-53C8BC30761F">
                         <File Id="MANAGE_AGENTS.EXE" Name="manage_agents.exe" Source="manage_agents.exe" />
                     </Component>
+                     <!-- Case where wazuh is not installed and Windows is great and equal to Windows vista -->
                     <Component Id="WAZUH_AGENT_EVENTCHANNEL.EXE" DiskId="1" Guid="044E7997-12B6-4178-BD00-B90500DBA53F">
                         <File Id="WAZUH_AGENT_EVENTCHANNEL.EXE" Name="wazuh-agent.exe" Source="wazuh-agent-eventchannel.exe" />
                         <ServiceInstall Name="WazuhSvc" Type="ownProcess" Start="auto" ErrorControl="normal" Description="Wazuh Windows Agent" DisplayName="Wazuh" Id="svc_install_eventchannel" />
                         <ServiceControl Id="svc_uninstall_eventchannel" Name="WazuhSvc" Remove="uninstall" Stop="uninstall" Wait="yes" />
-                        <Condition>VersionNT &gt;= 600</Condition>
+                        <Condition>NOT(OSSECINSTALLED) AND VersionNT &gt;= 600</Condition>
                     </Component>
+                    <!-- Case where wazuh is not installed and Windows is great and equal to Windows XP and less than Windows Vista -->
                     <Component Id="WAZUH_AGENT.EXE" DiskId="1" Guid="5CCEA6DC-8434-4137-9486-55AE3949266B">
                         <File Id="WAZUH_AGENT.EXE" Name="wazuh-agent.exe" Source="wazuh-agent.exe" />
                         <ServiceInstall Name="WazuhSvc" Type="ownProcess" Start="auto" ErrorControl="normal" Description="Wazuh Windows Agent" DisplayName="Wazuh" Id="svc_install" />
                         <ServiceControl Id="ServiceControl" Name="WazuhSvc" Stop="both" Remove="uninstall" Wait="yes" />
-                        <Condition>NOT(OSSECINSTALLED) AND (VersionNT &lt; 600)</Condition>
+                        <Condition>NOT(OSSECINSTALLED) AND (VersionNT &gt;= 501 AND VersionNT &lt; 600) </Condition>
                     </Component>
+                    <!-- Case where wazuh is installed, running and Windows is great and equal to Windows XP and less than Windows Vista -->
                     <Component Id="WAZUH_AGENT_UPGRADE_OSSEC.EXE" DiskId="1" Guid="FB49A2F0-3433-47D4-A668-4139718AFDAC">
                         <File Id="WAZUH_AGENT_UPGRADE_OSSEC.EXE" Name="wazuh-agent.exe" Source="wazuh-agent.exe" />
                         <ServiceInstall Name="WazuhSvc" Type="ownProcess" Start="auto" ErrorControl="normal" Description="Wazuh Windows Agent" DisplayName="Wazuh" Id="svc_install_upgrade_ossec" />
                         <ServiceControl Id="ServiceControl_ossec_upgrade" Name="WazuhSvc" Remove="uninstall" Start="install" Stop="both" Wait="yes" />
+                        <Condition>OSSECINSTALLED  AND (OSSECRUNNING = "Running") AND (VersionNT &gt;= 501 AND VersionNT &lt; 600)</Condition>
+                    </Component>
+                    <!-- Case where wazuh is installed and Windows is great and equal to Windows Vista -->
+                    <Component Id="WAZUH_AGENT_UPGRADE_EVENTCHANNEL.EXE" DiskId="1" Guid="863C8AFC-1F2A-4C7C-BF1D-C0516F293367">
+                        <File Id="WAZUH_AGENT_UPGRADE_EVENTCHANNEL.EXE" Name="wazuh-agent.exe" Source="wazuh-agent-eventchannel.exe" />
+                        <ServiceInstall Name="WazuhSvc" Type="ownProcess" Start="auto" ErrorControl="normal" Description="Wazuh Windows Agent" DisplayName="Wazuh" Id="svc_install_upgrade_eventchannel" />
+                        <ServiceControl Id="ServiceControl_eventchannel_upgrade" Name="WazuhSvc" Remove="uninstall" Start="install" Stop="both" Wait="yes" />
                         <Condition>OSSECINSTALLED AND (OSSECRUNNING = "Running") AND (VersionNT &gt;= 600)</Condition>
                     </Component>
                     <Component Id="VISTA_SEC.TXT" DiskId="1" Guid="20EF5801-369B-4EC2-87A2-59DCE56308D9">
@@ -632,6 +642,7 @@
             <ComponentRef Id="WAZUH_AGENT_EVENTCHANNEL.EXE" />
             <ComponentRef Id="WAZUH_AGENT.EXE" />
             <ComponentRef Id="WAZUH_AGENT_UPGRADE_OSSEC.EXE" />
+			<ComponentRef Id="WAZUH_AGENT_UPGRADE_EVENTCHANNEL.EXE" />
             <ComponentRef Id="VISTA_SEC.TXT" />
             <ComponentRef Id="RESTART_WAZUH.EXE" />
             <ComponentRef Id="ROUTE_NULL.EXE" />
