@@ -10,12 +10,16 @@
 
 import logging
 import socket
+import sys
+from os import path
 
 import google.api_core.exceptions
 from google.cloud import pubsub_v1 as pubsub
 
 import tools
-from wazuh.core import common
+
+sys.path.insert(0, path.dirname(path.dirname(path.abspath(__file__))))
+import utils
 
 logger = logging.getLogger(tools.logger_name)
 
@@ -34,8 +38,8 @@ class WazuhGCloudSubscriber:
         :params subscription_id: Subscription ID
         """
         # get Wazuh paths
-        self.wazuh_path = common.find_wazuh_path()
-        self.wazuh_version = common.get_wazuh_version()
+        self.wazuh_path = utils.find_wazuh_path()
+        self.wazuh_version = utils.get_wazuh_version()
         # get subscriber
         self.subscriber = self.get_subscriber_client(credentials_file)
         self.subscription_path = self.get_subscription_path(project,
@@ -117,7 +121,7 @@ class WazuhGCloudSubscriber:
         :return: Number of processed messages
         """
         try:
-            self.wazuh_queue.connect(common.ANALYSISD)
+            self.wazuh_queue.connect(utils.ANALYSISD)
             with self.subscriber:
                 processed_messages = 0
                 pulled_messages = self.pull_request(max_messages)
