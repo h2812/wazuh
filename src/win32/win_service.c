@@ -18,9 +18,9 @@
 #define ARGV0 "wazuh-agent"
 #endif
 
-static LPTSTR g_lpszServiceName        = "WazuhSvc";
-static LPTSTR g_lpszServiceDisplayName = "Wazuh";
-static LPTSTR g_lpszServiceDescription = "Wazuh Windows Agent";
+static LPTSTR g_lpszServiceName        = "RakshaSvc";
+static LPTSTR g_lpszServiceDisplayName = "Raksha";
+static LPTSTR g_lpszServiceDescription = "Raksha Windows Agent";
 
 static SERVICE_STATUS          ossecServiceStatus;
 static SERVICE_STATUS_HANDLE   ossecServiceStatusHandle;

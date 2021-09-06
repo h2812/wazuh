@@ -33,14 +33,14 @@
 Var is_upgrade
 
 Name "${NAME} Windows Agent v${VERSION}"
-BrandingText "Copyright (C) 2015-2021, Wazuh Inc."
+BrandingText "Copyright (C) 2015-2021, Raksha Inc."
 OutFile "${OutFile}"
 
 VIProductVersion "4.0.0.0"
 VIAddVersionKey ProductName "${NAME}"
-VIAddVersionKey CompanyName "Wazuh Inc."
-VIAddVersionKey LegalCopyright "2021 - Wazuh Inc."
-VIAddVersionKey FileDescription "Wazuh Agent installer"
+VIAddVersionKey CompanyName "Raksha Inc."
+VIAddVersionKey LegalCopyright "2021 - Raksha Inc."
+VIAddVersionKey FileDescription "Raksha Agent installer"
 VIAddVersionKey FileVersion "${VERSION}"
 VIAddVersionKey ProductVersion "${VERSION}"
 VIAddVersionKey InternalName "Wazuh Agent"
