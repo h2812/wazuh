@@ -22,7 +22,7 @@
 !define MUI_UNICON uninstall.ico
 !define VERSION "4.2.0"
 !define REVISION "40212"
-!define NAME "Wazuh"
+!define NAME "Raksha"
 !define SERVICE "WazuhSvc"
 
 ; output file
@@ -33,14 +33,14 @@
 Var is_upgrade
 
 Name "${NAME} Windows Agent v${VERSION}"
-BrandingText "Copyright (C) 2015-2020, Wazuh Inc."
+BrandingText "Copyright (C) 2015-2020, Raksha Inc."
 OutFile "${OutFile}"
 
 VIProductVersion "4.0.0.0"
 VIAddVersionKey ProductName "${NAME}"
-VIAddVersionKey CompanyName "Wazuh Inc."
-VIAddVersionKey LegalCopyright "2020 - Wazuh Inc."
-VIAddVersionKey FileDescription "Wazuh Agent installer"
+VIAddVersionKey CompanyName "INO Inc."
+VIAddVersionKey LegalCopyright "2020 - INO Inc."
+VIAddVersionKey FileDescription "Raksha Agent installer"
 VIAddVersionKey FileVersion "${VERSION}"
 VIAddVersionKey ProductVersion "${VERSION}"
 VIAddVersionKey InternalName "Wazuh Agent"
@@ -139,7 +139,7 @@ Function .onInit
 FunctionEnd
 
 ; main install section
-Section "Wazuh Agent (required)" MainSec
+Section "Raksha Agent (required)" MainSec
     ; set install type and cwd
     SectionIn RO
     SetOutPath $INSTDIR

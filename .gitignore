@@ -8,6 +8,8 @@
 *.exe
 *.dylib
 
+.idea
+
 # Auto generated build files
 src/LOCATION
 src/isbigendian.c
