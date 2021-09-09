@@ -45,4 +45,4 @@ The Windows agent does the following tasks:
 Visit the following link for information on how to get help or
 support for Raksha:
 
-https://wazuh.com/
+https://www.nectec.or.th/en/
