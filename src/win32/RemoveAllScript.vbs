@@ -1,5 +1,5 @@
 ' Script for configuration Windows agent.
-' Copyright (C) 2015-2020, Wazuh Inc. <support@wazuh.com>
+' Copyright (C) 2021, INO Inc. <Leelaaditya.ann@ncr.nstda.or.th>
 '
 ' This program is free software; you can redistribute it and/or modify
 ' it under the terms of the GNU General Public License as published by

@@ -19,7 +19,7 @@ function check-installation
         Start-Sleep 2
         $new_version = (Get-Content VERSION)
     }
-    write-output "$(Get-Date -format u) - Restarting Wazuh service." >> .\upgrade\upgrade.log
+    write-output "$(Get-Date -format u) - Restarting Raksha service." >> .\upgrade\upgrade.log
     Get-Service -Name "Wazuh" | Start-Service
 }
 
