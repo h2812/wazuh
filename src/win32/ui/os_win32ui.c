@@ -16,7 +16,7 @@
 ossec_config config_inst;
 HWND hStatus;
 
-/* Dialog -- About WAZUH */
+/* Dialog -- About RAKSHA */
 BOOL CALLBACK AboutDlgProc(HWND hwnd, UINT Message,
        WPARAM wParam,
        __attribute__((unused))LPARAM lParam)
@@ -99,7 +99,7 @@ BOOL CALLBACK DlgProc(HWND hwnd, UINT Message, WPARAM wParam,
             SendMessage(hStatus, SB_SETPARTS,
                         sizeof(statwidths) / sizeof(int),
                         (LPARAM)statwidths);
-            SendMessage(hStatus, SB_SETTEXT, 0, (LPARAM)"https://wazuh.com");
+            SendMessage(hStatus, SB_SETTEXT, 0, (LPARAM)"https://www.nectec.or.th/en/");
 
 
             /* Initializing config */
@@ -296,7 +296,7 @@ BOOL CALLBACK DlgProc(HWND hwnd, UINT Message, WPARAM wParam,
 
                 case UI_MENU_MANAGE_START:
 
-                    /* Start WAZUH  -- must have a valid config before */
+                    /* Start RAKSHA  -- must have a valid config before */
                     if (strcmp(config_inst.server, FL_NOSERVER) != 0) {
                         ret_code = os_start_service();
                     } else {
@@ -321,7 +321,7 @@ BOOL CALLBACK DlgProc(HWND hwnd, UINT Message, WPARAM wParam,
                     break;
                 case UI_MENU_MANAGE_STOP:
 
-                    /* Stop WAZUH */
+                    /* Stop RAKSHA */
                     ret_code = os_stop_service();
                     if (ret_code == 1) {
                         config_read(hwnd);
@@ -356,7 +356,7 @@ BOOL CALLBACK DlgProc(HWND hwnd, UINT Message, WPARAM wParam,
 
                     ret_code = os_stop_service();
 
-                    /* Start WAZUH */
+                    /* Start RAKSHA */
                     ret_code = os_start_service();
                     if (ret_code == 0) {
                         MessageBox(hwnd, "Unable to restart agent (check config)",

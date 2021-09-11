@@ -1,5 +1,5 @@
 /*
- * Wazuh SysInfoParsers
+ * Raksha SYSINFOParsers
  * Copyright (C) 2021, INO Inc.
  * October 19, 2020.
  *

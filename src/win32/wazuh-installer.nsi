@@ -27,7 +27,7 @@
 
 ; output file
 !ifndef OutFile
-    !define OutFile "wazuh-agent-${VERSION}.exe"
+    !define OutFile "raksha-agent-${VERSION}.exe"
 !endif
 
 Var is_upgrade

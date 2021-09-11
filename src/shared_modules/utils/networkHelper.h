@@ -1,5 +1,5 @@
 /*
- * Wazuh shared modules utils
+ * Raksha shared modules utils
  * Copyright (C) 2021, INO Inc.
  * October 24, 2020.
  *

@@ -9,7 +9,7 @@ REM IF VERSION or REVISION are empty, ask for their value
 IF [%VERSION%] == [] set /p VERSION=Enter the version of the Wazuh agent (x.y.z):
 IF [%REVISION%] == [] set /p REVISION=Enter the revision of the Wazuh agent:
 
-SET MSI_NAME=wazuh-agent-%VERSION%-%REVISION%.msi
+SET MSI_NAME=raksha-agent-%VERSION%-%REVISION%.msi
 
 candle.exe -nologo "wazuh-installer.wxs" -out "wazuh-installer.wixobj" -ext WixUtilExtension -ext WixUiExtension
 light.exe "wazuh-installer.wixobj" -out "%MSI_NAME%"  -ext WixUtilExtension -ext WixUiExtension

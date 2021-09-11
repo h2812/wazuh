@@ -29,7 +29,7 @@ int main(int argc, char **argv)
         return (0);
     }
 
-    /* Configure Wazuh for automatic startup */
+    /* Configure Rakshaor automatic startup */
     system("sc config WazuhSvc start= auto");
 
     /* Change permissions */

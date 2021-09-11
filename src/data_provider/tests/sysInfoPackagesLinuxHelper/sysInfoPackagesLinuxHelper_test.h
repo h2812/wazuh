@@ -1,5 +1,5 @@
 /*
- * Wazuh SysInfo
+ * Raksha SYSINFO
  * Copyright (C) 2021, INO Inc.
  * January 28, 2021.
  *

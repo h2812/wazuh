@@ -22,7 +22,7 @@
 #include "external/cJSON/cJSON.h"
 
 #ifndef ARGV0
-#define ARGV0 "wazuh-agent"
+#define ARGV0 "raksha-agent"
 #endif
 
 /* Help message */

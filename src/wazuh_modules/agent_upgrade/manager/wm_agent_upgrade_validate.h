@@ -1,5 +1,5 @@
 /*
- * Wazuh Module for Agent Upgrading
+ * Raksha Module for Agent Upgrading
  * Copyright (C) 2021, INO Inc.
  * August 10, 2020.
  *
