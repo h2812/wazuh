@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2015-2020, Wazuh Inc.
+ * Copyright (C) 2021, INO Inc.
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General Public
@@ -22,7 +22,7 @@ void wrap_plist_from_bin (char * bin, size_t size, plist_t *node) {
         *node = mock_type(plist_t);
         return;
     }
-    
+
     plist_from_bin(bin, size, node);
 }
 
@@ -34,7 +34,7 @@ void wrap_plist_to_xml (plist_t *node, char ** xml, uint32_t *size) {
         *size = mock_type(uint32_t);
         return;
     }
-    
+
     plist_to_xml(node, xml, size);
 }
 
@@ -43,6 +43,6 @@ void wrap_plist_free(plist_t node) {
         check_expected(node);
         return;
     }
-    
+
     plist_free(node);
 }

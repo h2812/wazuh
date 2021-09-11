@@ -1,5 +1,5 @@
 /* RSA-PKCS1-SHA256 signature
- * Copyright (C) 2015-2020, Wazuh Inc.
+ * Copyright (C) 2021, INO Inc.
  * June 28, 2017.
  *
  * This program is free software; you can redistribute it

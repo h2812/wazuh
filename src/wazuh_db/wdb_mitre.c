@@ -1,6 +1,6 @@
 /*
  * Wazuh SQLite integration
- * Copyright (C) 2015-2020, Wazuh Inc.
+ * Copyright (C) 2021, INO Inc.
  * June 06, 2016.
  *
  * This program is free software; you can redistribute it
@@ -14,7 +14,7 @@
 // Function to get a MITRE technique's name.
 
 int wdb_mitre_name_get(wdb_t *wdb, char *id, char *output) {
-    
+
     if (!wdb->transaction && wdb_begin2(wdb) < 0) {
         mdebug1("cannot begin transaction");
         return -1;

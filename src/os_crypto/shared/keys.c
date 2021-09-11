@@ -1,4 +1,4 @@
-/* Copyright (C) 2015-2020, Wazuh Inc.
+/* Copyright (C) 2021, INO Inc.
  * Copyright (C) 2009 Trend Micro Inc.
  * All rights reserved.
  *
@@ -673,6 +673,6 @@ int OS_DeleteSocket(keystore * keys, int sock) {
 int w_get_agent_net_protocol_from_keystore(keystore * keys, const char * agent_id) {
 
     const int key_id = OS_IsAllowedID(keys, agent_id);
-    
+
     return (key_id >= 0 ? keys->keyentries[key_id]->net_protocol : key_id);
 }

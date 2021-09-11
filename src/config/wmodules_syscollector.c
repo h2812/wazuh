@@ -1,6 +1,6 @@
 /*
  * Wazuh Syscollector Module Configuration
- * Copyright (C) 2015-2021, Wazuh Inc.
+ * Copyright (C) 2021, INO Inc.
  * March 9, 2017.
  *
  * This program is free software; you can redistribute it

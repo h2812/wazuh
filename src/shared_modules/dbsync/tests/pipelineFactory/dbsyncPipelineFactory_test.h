@@ -1,6 +1,6 @@
 /*
  * Wazuh DBSYNC
- * Copyright (C) 2015-2020, Wazuh Inc.
+ * Copyright (C) 2021, INO Inc.
  * July 16, 2020.
  *
  * This program is free software; you can redistribute it
@@ -13,7 +13,7 @@
 #include "gtest/gtest.h"
 #include "gmock/gmock.h"
 
-class DBSyncPipelineFactoryTest : public ::testing::Test 
+class DBSyncPipelineFactoryTest : public ::testing::Test
 {
 protected:
 

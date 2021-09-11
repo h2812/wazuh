@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-# Copyright (C) 2015-2020, Wazuh Inc.
+# Copyright (C) 2021, INO Inc.
 # Created by Wazuh, Inc. <info@wazuh.com>.
 # This program is a free software; you can redistribute it and/or modify it under the terms of GPLv2
 #
@@ -8,7 +8,7 @@
 #
 # python mitredb.py -> install mitre.db in /var/ossec/var/db
 # python mitredb.py -d /other/directory/mitre.db  -> install mitre.db in other directory
-# python mitredb.py -h -> Help 
+# python mitredb.py -h -> Help
 
 import json
 import sqlite3
@@ -21,7 +21,7 @@ import sys
 
 
 def create_connection(db_file):
-    """ 
+    """
     Create a database connection to the SQLite database specified by db_file.
 
     :param db_file: Database file. Examples: ('example.db'), ("/var/ossec/var/db/example.db"), etc.
@@ -38,7 +38,7 @@ def create_connection(db_file):
 
 
 def table_stmt(conn, sql_stmt):
-    """ 
+    """
     Create or delete a table from the sql statement.
 
     :param conn: Connection object
@@ -53,7 +53,7 @@ def table_stmt(conn, sql_stmt):
 
 
 def create_delete_tables(conn):
-    """ 
+    """
     First it deletes attack, has_phase and has_platform tables and then it creates them.
 
     :return:
@@ -104,8 +104,8 @@ def create_delete_tables(conn):
 
 
 def insert_attack_table(conn, id, json_object, name, database):
-    """ 
-    Insert to Mitre 'attack' table from Mitre ID technique and its JSON object. 
+    """
+    Insert to Mitre 'attack' table from Mitre ID technique and its JSON object.
 
     :param conn: Connection object
     :param id: Mitre ID technique (e.g. 'T1122')
@@ -130,7 +130,7 @@ def insert_attack_table(conn, id, json_object, name, database):
 
 
 def insert_phase_table(conn, attack_id, phase_name, database):
-    """ 
+    """
     Insert to Mitre 'phase' table from Mitre ID technique and its phase/tactic. It is posible that one ID has more than one phase/tactic associated.
 
     :param conn: Connection object
@@ -155,7 +155,7 @@ def insert_phase_table(conn, attack_id, phase_name, database):
 
 
 def insert_platform_table(conn, attack_id, platform_name, database):
-    """ 
+    """
     Insert to Mitre 'plaftform' table from Mitre ID technique and its platform. It is posible that one ID has more than one platform associated.
 
     :param conn: Connection object
@@ -180,7 +180,7 @@ def insert_platform_table(conn, attack_id, platform_name, database):
 
 
 def parse_json(pathfile, conn, database):
-    """ 
+    """
     Parse enterprise-attack.json and fill mitre.db's tables.
 
     :param pathfile: Path directory where enterprise-attack.json file is
@@ -279,7 +279,7 @@ def main(database=None):
     # Parse enterprise-attack.json file:
     parse_json(pathfile, conn, database)
 
-    # User and group permissions        
+    # User and group permissions
     os.chmod(database, 0o660)
     uid = pwd.getpwnam("root").pw_uid
     gid = grp.getgrnam("ossec").gr_gid

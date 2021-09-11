@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2015-2020, Wazuh Inc.
+ * Copyright (C) 2021, INO Inc.
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General Public
@@ -20,7 +20,7 @@ static w_linked_queue_t *queue_ptr = NULL; // Local ptr to queue
 void callback_queue_push_ex() {
     int *ptr = malloc(sizeof(int));
     *ptr = 0;
-    linked_queue_push_ex(queue_ptr, ptr);   
+    linked_queue_push_ex(queue_ptr, ptr);
 }
 
 int setup_queue(void **state) {

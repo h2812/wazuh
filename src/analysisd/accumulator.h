@@ -1,4 +1,4 @@
-/* Copyright (C) 2015-2020, Wazuh Inc.
+/* Copyright (C) 2021, INO Inc.
  * Copyright (C) 2009 Trend Micro Inc.
  * All rights reserved.
  *
@@ -56,7 +56,7 @@ void Accumulate_CleanUp(OSHash **acm_store, int *acm_lookups, time_t *acm_purge_
 
 /**
  * @brief Free accumulate hash table
- * 
+ *
  * @param acm_store accumulate hash table to free
  */
 void w_analysisd_accumulate_free(OSHash **acm_store);

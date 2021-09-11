@@ -1,5 +1,5 @@
-WAZUH
-Copyright (C) 2015-2021, Wazuh Inc.
+Raksha
+Copyright (C) 2021, INO Inc.
 
 Based on OSSEC
 Copyright (C) 2014 Trend Micro Inc.
@@ -7,9 +7,6 @@ Copyright (C) 2014 Trend Micro Inc.
 
 ** Reporting bugs **
 
-Bugs should be sent to the Wazuh mailling list
-(https://groups.google.com/forum/#!forum/wazuh). Please, make sure to include
-the following information:
 
 -Output of "WAZUH_HOME/bin/wazuh-control info"
 -Content of WAZUH_HOME/etc/ossec.conf
@@ -19,4 +16,4 @@ the following information:
 
 
 If you prefer to contact us privately or want to report a
-security issue, send an e-mail to Wazuh (support@wazuh.com).
+security issue, send an e-mail to Raksha (leelaaditya.ann@ncr.nstda.or.th).

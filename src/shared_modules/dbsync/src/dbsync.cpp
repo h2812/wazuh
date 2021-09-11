@@ -1,6 +1,6 @@
 /*
  * Wazuh DBSYNC
- * Copyright (C) 2015-2020, Wazuh Inc.
+ * Copyright (C) 2021, INO Inc.
  * June 11, 2020.
  *
  * This program is free software; you can redistribute it
@@ -635,7 +635,7 @@ DBSync::~DBSync()
 void DBSync::teardown()
 {
     PipelineFactory::instance().release();
-    DBSyncImplementation::instance().release();    
+    DBSyncImplementation::instance().release();
 }
 
 void DBSync::addTableRelationship(const nlohmann::json& jsInput)

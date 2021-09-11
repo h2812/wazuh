@@ -1,4 +1,4 @@
-# Copyright (C) 2015-2020, Wazuh Inc.
+# Copyright (C) 2021, INO Inc.
 # Created by Wazuh, Inc. <info@wazuh.com>.
 # This program is a free software; you can redistribute it and/or modify it under the terms of GPLv2
 
@@ -56,7 +56,7 @@ async def end_logtest_session(request, pretty: bool = False, wait_for_complete: 
         Disable timeout response.
     token : str
         Token of the saved session.
-        
+
     Returns
     -------
     Data

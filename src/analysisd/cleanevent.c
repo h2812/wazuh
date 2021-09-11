@@ -1,4 +1,4 @@
-/* Copyright (C) 2015-2020, Wazuh Inc.
+/* Copyright (C) 2021, INO Inc.
  * Copyright (C) 2009 Trend Micro Inc.
  * All rights reserved.
  *
@@ -592,6 +592,6 @@ int OS_CleanMSG(char *msg, Eventinfo *lf)
         print_out("       log: '%s'", lf->log);
     }
 #endif
-    
+
     return (0);
 }

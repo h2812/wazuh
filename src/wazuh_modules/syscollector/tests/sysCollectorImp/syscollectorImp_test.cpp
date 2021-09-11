@@ -1,6 +1,6 @@
 /*
  * Wazuh SyscollectorImp
- * Copyright (C) 2015-2020, Wazuh Inc.
+ * Copyright (C) 2021, INO Inc.
  * November 9, 2020.
  *
  * This program is free software; you can redistribute it

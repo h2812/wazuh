@@ -1,4 +1,4 @@
-/* Copyright (C) 2015-2020, Wazuh Inc.
+/* Copyright (C) 2021, INO Inc.
  * Copyright (C) 2009 Trend Micro Inc.
  * All right reserved.
  *
@@ -201,7 +201,7 @@ static int read_main_elements(const OS_XML *xml, int modules,
                 goto fail;
             }
         } else if (chld_node && (strcmp(node[i]->element, task_manager) == 0)) {
-            #if !defined(WIN32) && !defined(CLIENT)  
+            #if !defined(WIN32) && !defined(CLIENT)
                 if ((modules & CWMODULE) && (Read_TaskManager(xml, node[i], d1) < 0)) {
                     goto fail;
                 }

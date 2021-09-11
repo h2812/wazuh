@@ -1,6 +1,6 @@
 /*
  * Wazuh Module Configuration
- * Copyright (C) 2015-2020, Wazuh Inc.
+ * Copyright (C) 2021, INO Inc.
  * December, 2017.
  *
  * This program is free software; you can redistribute it
@@ -201,7 +201,7 @@ int wm_azure_read(const OS_XML *xml, xml_node **nodes, wmodule *module)
         } else if (is_sched_tag(nodes[i]->element)) {
             // Do nothing
         } else {
-            merror("No such tag '%s' at module '%s'.", nodes[i]->element, WM_AZURE_CONTEXT.name);	
+            merror("No such tag '%s' at module '%s'.", nodes[i]->element, WM_AZURE_CONTEXT.name);
             return OS_INVALID;
         }
     }

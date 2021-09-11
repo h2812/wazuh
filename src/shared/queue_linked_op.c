@@ -1,6 +1,6 @@
 /*
  * Linked Queue (abstract data type)
- * Copyright (C) 2015-2020, Wazuh Inc.
+ * Copyright (C) 2021, INO Inc.
  * October 10, 2020
  *
  * This program is free software; you can redistribute it
@@ -70,7 +70,7 @@ void linked_queue_unlink_and_push_node(w_linked_queue_t * queue, w_linked_queue_
         node->next->prev = node->prev;
     } else {
         // Already at the correct spot
-        w_mutex_unlock(&queue->mutex); 
+        w_mutex_unlock(&queue->mutex);
         return;
     }
     if (node->prev) {
@@ -82,7 +82,7 @@ void linked_queue_unlink_and_push_node(w_linked_queue_t * queue, w_linked_queue_
     node->next = NULL;
     queue->elements--;
     linked_queue_append_node(queue, node);
-    w_mutex_unlock(&queue->mutex); 
+    w_mutex_unlock(&queue->mutex);
 }
 
 void * linked_queue_pop(w_linked_queue_t * queue) {

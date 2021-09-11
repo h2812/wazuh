@@ -1,4 +1,4 @@
-# Copyright (C) 2015-2020, Wazuh Inc.
+# Copyright (C) 2021, INO Inc.
 # Created by Wazuh, Inc. <info@wazuh.com>.
 # This program is a free software; you can redistribute it and/or modify it under the terms of GPLv2
 
@@ -19,7 +19,7 @@ integer_resources = ['user:id', 'role:id', 'rule:id', 'policy:id']
 
 def _expand_resource(resource):
     """This function expand a specified resource depending of its type.
-    
+
     Parameters
     ----------
     resource : str

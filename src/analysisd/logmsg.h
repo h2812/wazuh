@@ -1,4 +1,4 @@
-/* Copyright (C) 2015-2020, Wazuh Inc.
+/* Copyright (C) 2021, INO Inc.
  * All right reserved.
  *
  * This program is free software; you can redistribute it
@@ -40,7 +40,7 @@ typedef struct os_analysisd_log_msg_t {
  * @param ...    additional arguments following format are formatted and inserted in the
  *                   resulting string replacing their respective specifiers.
  */
-void _os_analysisd_add_logmsg(OSList * list, int level, int line, const char * func, 
+void _os_analysisd_add_logmsg(OSList * list, int level, int line, const char * func,
                                 const char * file, char * msg, ...) __attribute__((nonnull));
 
 /**

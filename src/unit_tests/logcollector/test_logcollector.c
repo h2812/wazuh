@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2015-2020, Wazuh Inc.
+ * Copyright (C) 2021, INO Inc.
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General Public
@@ -294,7 +294,7 @@ void test_w_save_files_status_to_cJSON_begin_NULL(void ** state) {
 
     OSHashNode *hash_node = NULL;
 
-    expect_function_call(__wrap_pthread_rwlock_rdlock);    
+    expect_function_call(__wrap_pthread_rwlock_rdlock);
     expect_value(__wrap_OSHash_Begin, self, files_status);
     will_return(__wrap_OSHash_Begin, hash_node);
     expect_function_call(__wrap_pthread_rwlock_unlock);
@@ -317,7 +317,7 @@ void test_w_save_files_status_to_cJSON_OK(void ** state) {
     hash_node->key = "test";
     hash_node->data = data;
 
-    expect_function_call(__wrap_pthread_rwlock_rdlock);    
+    expect_function_call(__wrap_pthread_rwlock_rdlock);
     expect_value(__wrap_OSHash_Begin, self, files_status);
     will_return(__wrap_OSHash_Begin, hash_node);
 

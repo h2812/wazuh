@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2015-2020, Wazuh Inc.
+ * Copyright (C) 2021, INO Inc.
  * November, 2020.
  *
  * This program is free software; you can redistribute it
@@ -33,7 +33,7 @@ typedef struct {
 buffer_t *buffer_initialize(const size_t size);
 
 /**
- * @brief function to append data on initialized buffer. 
+ * @brief function to append data on initialized buffer.
  *
  * @param buffer Buffer(buffer_t) structure that contain context.
  * @param src source data to append in buffer_t destination buffer.

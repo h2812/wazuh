@@ -1,7 +1,7 @@
 #!/bin/sh
-# Copyright (C) 2015-2021, Wazuh Inc.
-# Installation script for Wazuh
-# Author: Daniel B. Cid <daniel.cid@gmail.com>
+# Copyright (C) 2021, INO Inc.
+# Installation script for Raksha
+# Author: Leela Aditya <leelaaditya.ann@ncr.nstda.or.th>
 
 ### Looking up for the execution directory
 cd `dirname $0`

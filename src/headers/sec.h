@@ -1,4 +1,4 @@
-/* Copyright (C) 2015-2020, Wazuh Inc.
+/* Copyright (C) 2021, INO Inc.
  * Copyright (C) 2009 Trend Micro Inc.
  * All right reserved.
  *
@@ -39,7 +39,7 @@ typedef struct _keyentry {
     ino_t inode;
 
     os_ip *ip;
-    int sock;                           ///< File descriptor of client's TCP socket 
+    int sock;                           ///< File descriptor of client's TCP socket
     int net_protocol;                   ///< Client current protocol
     pthread_mutex_t mutex;
     struct sockaddr_in peer_info;
@@ -161,7 +161,7 @@ int OS_DeleteSocket(keystore * keys, int sock);
 
 /**
  * @brief Get agent's network protocol from keystore given its agent id
- * 
+ *
  * @param keys Contains information related with the agents
  * @param agent_id This variable is used to index the keys array
  * @retval -1 if protocol could not be found

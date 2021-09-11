@@ -1,6 +1,6 @@
 /*
  * Wazuh SYSINFO
- * Copyright (C) 2015-2020, Wazuh Inc.
+ * Copyright (C) 2021, INO Inc.
  * November 3, 2020.
  *
  * This program is free software; you can redistribute it
@@ -19,7 +19,7 @@
 
 const auto IPV6_BUFFER_ADDRESS_SIZE { 16 };
 
-static const std::map<int32_t, std::string> STATE_TYPE = 
+static const std::map<int32_t, std::string> STATE_TYPE =
 {
     { MIB_TCP_STATE_ESTAB,                 "established"    },
     { MIB_TCP_STATE_SYN_SENT,              "syn_sent"       },
@@ -35,7 +35,7 @@ static const std::map<int32_t, std::string> STATE_TYPE =
     { MIB_TCP_STATE_DELETE_TCB,            "delete_tcp"     }
 };
 
-static const std::map<pid_t, std::string> SYSTEM_PROCESSES = 
+static const std::map<pid_t, std::string> SYSTEM_PROCESSES =
 {
     { 0,                                   "System Idle Process"   },
     { 4,                                   "System"                },

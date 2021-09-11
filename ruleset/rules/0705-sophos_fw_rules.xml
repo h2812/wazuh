@@ -1,7 +1,7 @@
 <!--
   -  Sophos XG210 Firewall rules
   -  Created by Wazuh, Inc.
-  -  Copyright (C) 2015-2019, Wazuh Inc.
+  -  Copyright (C) 2021, INO Inc.
   -  This program is a free software; you can redistribute it and/or modify it under the terms of GPLv2.
 -->
 
@@ -58,13 +58,13 @@
     <field name="sophos_fw_status_msg">Admin</field>
     <description>Admin Traffic: from $(src_ip) to $(dst_ip)</description>
   </rule>
-  
+
   <rule id="70029" level="5">
     <if_sid>70020</if_sid>
     <field name="sophos_fw_status_msg">Authentication</field>
     <description>Authentication Traffic: from $(src_ip) to $(dst_ip)</description>
   </rule>
-  
+
   <rule id="70030" level="3">
     <if_sid>70020</if_sid>
     <field name="sophos_fw_status_msg">System</field>

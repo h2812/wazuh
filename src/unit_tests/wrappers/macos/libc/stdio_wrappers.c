@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2015-2020, Wazuh Inc.
+ * Copyright (C) 2021, INO Inc.
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General Public
@@ -132,7 +132,7 @@ void * wrap_mmap (void *start, size_t length, int prot, int flags, int fd, off_t
         }
 
         return ret;
-        
+
     }
     return mmap(start, length, prot, flags, fd, offset);
 }

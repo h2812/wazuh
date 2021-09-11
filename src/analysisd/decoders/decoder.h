@@ -1,4 +1,4 @@
-/* Copyright (C) 2015-2020, Wazuh Inc.
+/* Copyright (C) 2021, INO Inc.
  * Copyright (C) 2009 Trend Micro Inc.
  * All rights reserved.
  *
@@ -136,7 +136,7 @@ void OS_CreateOSDecoderList(void);
  * @param npn_osdecodernode decoder list for events without program name
  * @return 1 on success, otherwise 0
  */
-int OS_AddOSDecoder(OSDecoderInfo *pi, OSDecoderNode **pn_osdecodernode, 
+int OS_AddOSDecoder(OSDecoderInfo *pi, OSDecoderNode **pn_osdecodernode,
                     OSDecoderNode **npn_osdecodernode, OSList* log_msg);
 
 OSDecoderNode *OS_GetFirstOSDecoder(const char *pname);

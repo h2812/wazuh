@@ -141,14 +141,7 @@ Here you can find all the automation tools maintained by the Wazuh team.
 * PyPi packages: [azure-storage-blob](https://github.com/Azure/azure-storage-python), [boto3](https://github.com/boto/boto3), [cryptography](https://github.com/pyca/cryptography), [docker](https://github.com/docker/docker-py), [pytz](https://pythonhosted.org/pytz/), [requests](http://python-requests.org/) and [uvloop](http://github.com/MagicStack/uvloop).
 * PCRE2 library by Philip Hazel (https://www.pcre.org/).
 
-## Documentation
-
-* [Full documentation](http://documentation.wazuh.com)
-* [Wazuh installation guide](https://documentation.wazuh.com/current/installation-guide/index.html)
-
 ## Get involved
-
-Become part of the [Wazuh's community](https://wazuh.com/community/) to learn from other users, participate in discussions, talk to our developers and contribute to the project.
 
 If you want to contribute to our project please don’t hesitate to make pull-requests, submit issues or send commits, we will review all your questions.
 
@@ -156,15 +149,8 @@ You can also join our [Slack community channel](https://wazuh.com/community/join
 
 Stay up to date on news, releases, engineering articles and more.
 
-* [Wazuh website](http://wazuh.com)
-* [Linkedin](https://www.linkedin.com/company/wazuh)
-* [YouTube](https://www.youtube.com/c/wazuhsecurity)
-* [Twitter](https://twitter.com/wazuh)
-* [Wazuh blog](https://wazuh.com/blog/)
-* [Slack announcements channel](https://wazuh.com/community/join-us-on-slack/)
-
 ## Authors
 
-Wazuh Copyright (C) 2015-2020 Wazuh Inc. (License GPLv2)
+Raksha Copyright (C) 2021 INO Inc. (License GPLv2)
 
-Based on the OSSEC project started by Daniel Cid.
+Based on the OSSEC project started by Leela Aditya.

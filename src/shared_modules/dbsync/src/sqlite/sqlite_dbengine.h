@@ -1,6 +1,6 @@
 /*
  * Wazuh DBSYNC
- * Copyright (C) 2015-2020, Wazuh Inc.
+ * Copyright (C) 2021, INO Inc.
  * June 11, 2020.
  *
  * This program is free software; you can redistribute it
@@ -28,7 +28,7 @@ constexpr auto STATUS_FIELD_TYPE {"INTEGER"};
 
 constexpr auto CACHE_STMT_LIMIT { 30ull };
 
-const std::vector<std::string> InternalColumnNames = 
+const std::vector<std::string> InternalColumnNames =
 {
     { STATUS_FIELD_NAME }
 };
@@ -55,14 +55,14 @@ const std::map<std::string, ColumnType> ColumnTypeNames =
     { "BLOB"            , Blob           },
 };
 
-enum TableHeader 
+enum TableHeader
 {
     CID = 0,
     Name,
     Type,
     PK,
     TXNStatusField
-}; 
+};
 
 enum GenericTupleIndex
 {
@@ -72,7 +72,7 @@ enum GenericTupleIndex
     GenBigInt,
     GenUnsignedBigInt,
     GenDouble
-}; 
+};
 
 using ColumnData =
     std::tuple<int32_t, std::string, ColumnType, bool, bool>;
@@ -91,28 +91,28 @@ enum ResponseType
 {
     RTJson = 0,
     RTCallback
-}; 
+};
 
 class dbengine_error : public DbSync::dbsync_error
 {
 public:
     explicit dbengine_error(const std::pair<int, std::string>& exceptionInfo)
     : DbSync::dbsync_error
-    { 
+    {
         exceptionInfo.first, "dbEngine: " + exceptionInfo.second
     }
     {}
 };
 
 
-class SQLiteDBEngine final : public DbSync::IDbEngine 
+class SQLiteDBEngine final : public DbSync::IDbEngine
 {
     public:
         SQLiteDBEngine(const std::shared_ptr<ISQLiteFactory>& sqliteFactory,
                        const std::string& path,
                        const std::string& tableStmtCreation);
         ~SQLiteDBEngine();
-        
+
         void bulkInsert(const std::string& table,
                         const nlohmann::json& data) override;
 
@@ -131,7 +131,7 @@ class SQLiteDBEngine final : public DbSync::IDbEngine
 
         void deleteRowsByStatusField(const nlohmann::json& tableNames) override;
 
-        void returnRowsMarkedForDelete(const nlohmann::json& tableNames, 
+        void returnRowsMarkedForDelete(const nlohmann::json& tableNames,
                                        const DbSync::ResultCallback callback) override;
 
         void selectData(const std::string& table,
@@ -140,7 +140,7 @@ class SQLiteDBEngine final : public DbSync::IDbEngine
 
         void deleteTableRowsData(const std::string& table,
                                  const nlohmann::json& jsDeletionData) override;
-        
+
         void addTableRelationship(const nlohmann::json& data) override;
 
     private:
@@ -156,7 +156,7 @@ class SQLiteDBEngine final : public DbSync::IDbEngine
         std::string buildInsertBulkDataSqlQuery(const std::string& table,
                                                 const nlohmann::json& data = {});
 
-        std::string buildDeleteBulkDataSqlQuery(const std::string& table, 
+        std::string buildDeleteBulkDataSqlQuery(const std::string& table,
                                                 const std::vector<std::string>& primaryKeyList);
 
         std::string buildSelectQuery(const std::string& table,
@@ -275,12 +275,12 @@ class SQLiteDBEngine final : public DbSync::IDbEngine
 
         std::unique_ptr<SQLite::IStatement>const& getStatement(const std::string& sql);
 
-        std::string getSelectAllQuery(const std::string& table, 
+        std::string getSelectAllQuery(const std::string& table,
                                       const TableColumns& tableFields) const;
 
         std::string buildDeleteRelationTrigger(const nlohmann::json& data,
                                                const std::string&    baseTable);
-        
+
         std::string buildUpdateRelationTrigger(const nlohmann::json&            data,
                                                const std::string&               baseTable,
                                                const std::vector<std::string>&  primaryKeys);

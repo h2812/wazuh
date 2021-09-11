@@ -1,6 +1,6 @@
 /*
  * Wazuh DBSYNC
- * Copyright (C) 2015-2020, Wazuh Inc.
+ * Copyright (C) 2021, INO Inc.
  * July 02, 2020.
  *
  * This program is free software; you can redistribute it
@@ -39,7 +39,7 @@ public:
     const std::string& outputFolder() const
     {
         return m_outputFolder;
-    }    
+    }
 
     static void showHelp()
     {
@@ -48,7 +48,7 @@ public:
                   << "\t-h \t\t\tShow this help message\n"
                   << "\t-c JSON_CONFIG_FILE\tSpecifies the json config file to initialize the database.\n"
                   << "\t-a ACTION_LIST\t\tSpecifies the list of actions to exercise the database.\n"
-                  << "\t-o OUTPUT_FOLDER\tSpecifies the output folder path where the results will be generated.\n"         
+                  << "\t-o OUTPUT_FOLDER\tSpecifies the output folder path where the results will be generated.\n"
                   << "\nExample:"
                   << "\n\t./dbsync_test_tool -c config.json -a input1.json,input2.json,input3.json -o ./output\n"
                   << std::endl;

@@ -1,6 +1,6 @@
 
 /*
- * Copyright (C) 2015-2020, Wazuh Inc.
+ * Copyright (C) 2021, INO Inc.
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General Public
@@ -29,7 +29,7 @@ void w_expression_PCRE2_fill_regex_match(int captured_groups, const char * str_t
 const char * w_expression_get_regex_pattern(w_expression_t * expression);
 
 /* setup/teardown */
-    
+
 /* tests */
 
 // w_calloc_expression_t

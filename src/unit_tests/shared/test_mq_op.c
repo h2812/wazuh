@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2015-2020, Wazuh Inc.
+ * Copyright (C) 2021, INO Inc.
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General Public
@@ -247,7 +247,7 @@ void test_start_mq_write_inf_fail(void ** state){
     will_return(__wrap_OS_ConnectUnixDomain, 0);
     /* Ignoring output */
     expect_any_count(__wrap__mdebug1, formatted_msg, -1);
-    
+
     ret = StartMQ(path, type, n_attempts);
 }
 

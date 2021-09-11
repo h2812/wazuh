@@ -1,4 +1,4 @@
-# Copyright (C) 2015-2020, Wazuh Inc.
+# Copyright (C) 2021, INO Inc.
 # Created by Wazuh, Inc. <info@wazuh.com>.
 # This program is a free software; you can redistribute it and/or modify it under the terms of GPLv2
 
@@ -25,7 +25,7 @@ async def get_agents_ciscat_results(request, agent_id: str, pretty: bool = False
     Returns the agent's ciscat results info.
 
     :param agent_id: Agent ID. All posible values since 000 onwards.
-    :param pretty: Show results in human-readable format 
+    :param pretty: Show results in human-readable format
     :param wait_for_complete: Disable timeout response
     :param offset: First element to return in the collection
     :param limit: Maximum number of elements to return

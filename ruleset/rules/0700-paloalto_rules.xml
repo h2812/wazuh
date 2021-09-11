@@ -2,7 +2,7 @@
   -  PaloAlto v9.0 rules
   -  ID range: 64500 - 64511
   -  Created by Wazuh, Inc.
-  -  Copyright (C) 2015-2020, Wazuh Inc.
+  -  Copyright (C) 2021, INO Inc.
   -  This program is a free software; you can redistribute it and/or modify it under the terms of GPLv2.
 -->
 
@@ -63,7 +63,7 @@
     <field name="content_type">end</field>
     <description>Palo Alto TRAFFIC: session ended  on $(device_name) from $(src_ip) to $(dst_ip). Reason: $(session_end_reason)</description>
     <group>pci_dss_1.4,pci_dss_10.6.1,pci_dss_11.4,tsc_CC6.1,tsc_CC6.8,tsc_CC7.2,tsc_CC7.3,tsc_CC6.7,tsc_CC7.4,gpg13_4.12,gdpr_IV_35.7.d,hipaa_164.312.b</group>
-  </rule> 
+  </rule>
   <rule id="64510" level="6">
     <if_sid>64507</if_sid>
     <field name="content_type">drop</field>

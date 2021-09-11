@@ -1,4 +1,4 @@
-/* Copyright (C) 2015-2020, Wazuh Inc.
+/* Copyright (C) 2021, INO Inc.
  * Copyright (C) 2009 Trend Micro Inc.
  * All right reserved.
  *
@@ -107,9 +107,9 @@ STATIC int multiline_getlog_all(char * buffer, int length, FILE * stream, w_mult
 
 /**
  * @brief Get specific chunk of file between two positions
- * 
- * @param stream File stream 
- * @param initial_pos initial position 
+ *
+ * @param stream File stream
+ * @param initial_pos initial position
  * @param final_pos final position
  * @return allocated buffer containing the readed chunk. NULL on error
  */

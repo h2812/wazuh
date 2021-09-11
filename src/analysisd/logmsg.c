@@ -1,4 +1,4 @@
-/* Copyright (C) 2015-2020, Wazuh Inc.
+/* Copyright (C) 2021, INO Inc.
  * Copyright (C) 2009 Trend Micro Inc.
  * All right reserved.
  *
@@ -10,7 +10,7 @@
 
 #include "logmsg.h"
 
-void _os_analysisd_add_logmsg(OSList * list, int level, int line, const char * func, 
+void _os_analysisd_add_logmsg(OSList * list, int level, int line, const char * func,
                                 const char * file, char * msg, ...) {
 
     va_list args;

@@ -1,6 +1,6 @@
 /*
  * Wazuh DBSYNC
- * Copyright (C) 2015-2020, Wazuh Inc.
+ * Copyright (C) 2021, INO Inc.
  * July 21, 2020.
  *
  * This program is free software; you can redistribute it
@@ -22,7 +22,7 @@ public:
         if (0 == actionCode.compare("dbsync_insert_data"))
         {
             return std::make_unique<InsertDataAction>();
-        }        
+        }
         if (0 == actionCode.compare("dbsync_update_with_snapshot"))
         {
             return std::make_unique<UpdateWithSnapshotAction>();

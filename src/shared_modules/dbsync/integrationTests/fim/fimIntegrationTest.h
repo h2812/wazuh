@@ -1,6 +1,6 @@
 /*
  * Wazuh DBSYNC
- * Copyright (C) 2015-2020, Wazuh Inc.
+ * Copyright (C) 2021, INO Inc.
  * August 6, 2020.
  *
  * This program is free software; you can redistribute it
@@ -15,7 +15,7 @@
 #include "gtest/gtest.h"
 #include "gmock/gmock.h"
 
-class DBSyncFimIntegrationTest : public ::testing::Test 
+class DBSyncFimIntegrationTest : public ::testing::Test
 {
 protected:
 

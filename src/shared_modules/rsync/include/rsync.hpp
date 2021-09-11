@@ -1,6 +1,6 @@
 /*
  * Wazuh RSYNC
- * Copyright (C) 2015-2020, Wazuh Inc.
+ * Copyright (C) 2021, INO Inc.
  * October 15, 2020.
  *
  * This program is free software; you can redistribute it
@@ -31,7 +31,7 @@
 
 using SyncCallbackData = const std::function<void(const std::string&)>;
 
-class EXPORTED RemoteSync 
+class EXPORTED RemoteSync
 {
 public:
     /**
@@ -42,7 +42,7 @@ public:
     static void initialize(std::function<void(const std::string&)> logFunction);
 
     /**
-     * @brief Remote sync initializes the instance. 
+     * @brief Remote sync initializes the instance.
      */
     RemoteSync();
 
@@ -67,7 +67,7 @@ public:
      * @param dbsyncHandle       DBSync handle to synchronize databases.
      * @param startConfiguration Statement used as a synchronization start.
      * @param callbackData       This callback is used to send sync information.
-     * 
+     *
      */
     virtual void startSync(const DBSYNC_HANDLE   dbsyncHandle,
                            const nlohmann::json& startConfiguration,
@@ -83,12 +83,12 @@ public:
      * @param callbackData       This callback is used to send sync information.
      *
      */
-    virtual void registerSyncID(const std::string&    messageHeaderID, 
+    virtual void registerSyncID(const std::string&    messageHeaderID,
                                 const DBSYNC_HANDLE   dbsyncHandle,
                                 const nlohmann::json& syncConfiguration,
                                 SyncCallbackData      callbackData);
     /**
-     * @brief Pushes the \p payload message within a queue to process it in an async 
+     * @brief Pushes the \p payload message within a queue to process it in an async
      *  dispatch queue.
      *
      * @param payload Message to be queued and processed.

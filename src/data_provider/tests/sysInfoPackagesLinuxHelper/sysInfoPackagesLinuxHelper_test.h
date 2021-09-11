@@ -1,6 +1,6 @@
 /*
  * Wazuh SysInfo
- * Copyright (C) 2015-2021, Wazuh Inc.
+ * Copyright (C) 2021, INO Inc.
  * January 28, 2021.
  *
  * This program is free software; you can redistribute it
@@ -14,7 +14,7 @@
 #include "gtest/gtest.h"
 #include "gmock/gmock.h"
 
-class SysInfoPackagesLinuxHelperTest : public ::testing::Test 
+class SysInfoPackagesLinuxHelperTest : public ::testing::Test
 {
 protected:
 

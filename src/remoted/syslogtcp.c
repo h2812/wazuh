@@ -1,4 +1,4 @@
-/* Copyright (C) 2015-2021, Wazuh Inc.
+/* Copyright (C) 2021, INO Inc.
  * Copyright (C) 2009 Trend Micro Inc.
  * All right reserved.
  *
@@ -21,7 +21,7 @@
 
 /**
  * @brief Get the offset of the syslog message, discarding the PRI header.
- * 
+ *
  * @param syslog_msg RAW syslog message
  * @return Length of the PRI header, 0 if not present
  */
@@ -53,7 +53,7 @@ static int OS_IPNotAllowed(char *srcip)
 void send_buffer(sockbuffer_t *socket_buffer, char *srcip) {
     char *data_pt = socket_buffer->data;
     int offset;
-    char * buffer_pt = NULL; 
+    char * buffer_pt = NULL;
 
     // ignore syslog PRI header
     data_pt += w_get_pri_header_len(data_pt);

@@ -1,6 +1,6 @@
 #! /bin/bash
 
-# Copyright (C) 2015-2020, Wazuh Inc.
+# Copyright (C) 2021, INO Inc.
 # By Spransy, Derek" <DSPRANS () emory ! edu> and Charlie Scott
 
 #####

@@ -1,13 +1,13 @@
 /*
  * Wazuh SyscollectorImp
- * Copyright (C) 2015-2020, Wazuh Inc.
+ * Copyright (C) 2021, INO Inc.
  * November 9, 2020.
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General Public
  * License (version 2) as published by the FSF - Free Software
  * Foundation.
- */ 
+ */
 #ifndef _SYSCOLLECTOR_IMP_TEST_H
 #define _SYSCOLLECTOR_IMP_TEST_H
 #include "gtest/gtest.h"

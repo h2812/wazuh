@@ -1,6 +1,6 @@
 /*
  * Wazuh DBSYNC
- * Copyright (C) 2015-2020, Wazuh Inc.
+ * Copyright (C) 2021, INO Inc.
  * June 11, 2020.
  *
  * This program is free software; you can redistribute it
@@ -64,7 +64,7 @@ namespace DbSync
         void closeTransaction(const DBSYNC_HANDLE handle,
                               const TXN_HANDLE txnHandle);
 
-        void getDeleted(const DBSYNC_HANDLE   handle, 
+        void getDeleted(const DBSYNC_HANDLE   handle,
                         const TXN_HANDLE      txnHandle,
                         const ResultCallback  callback);
 
@@ -72,7 +72,7 @@ namespace DbSync
                         const nlohmann::json&  json,
                         const ResultCallback&  callback);
 
-        void addTableRelationship(const DBSYNC_HANDLE   handle, 
+        void addTableRelationship(const DBSYNC_HANDLE   handle,
                                   const nlohmann::json& json);
 
         void release();
@@ -82,7 +82,7 @@ namespace DbSync
 
         struct TransactionContext final
         {
-            explicit TransactionContext(const nlohmann::json& tables) 
+            explicit TransactionContext(const nlohmann::json& tables)
             : m_tables(std::move(tables))
             {}
             nlohmann::json m_tables;
@@ -126,7 +126,7 @@ namespace DbSync
         };
 
         std::shared_ptr<DbEngineContext> dbEngineContext(const DBSYNC_HANDLE handle);
-        
+
         DBSyncImplementation() = default;
         ~DBSyncImplementation() = default;
         DBSyncImplementation(const DBSyncImplementation&) = delete;

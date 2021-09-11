@@ -1,4 +1,4 @@
-/* Copyright (C) 2015-2021, Wazuh Inc.
+/* Copyright (C) 2021, INO Inc.
  * All rights reserved.
  *
  * This program is free software; you can redistribute it
@@ -100,7 +100,7 @@ void w_logcollector_state_update_file(char * fpath, uint64_t bytes);
 
 /**
  * @brief Removes the `fpath` file from statistics
- * 
+ *
  * @param fpath file path or locafile location value
  */
 void w_logcollector_state_delete_file(char * fpath);

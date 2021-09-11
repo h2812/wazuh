@@ -1,6 +1,6 @@
 /*
  * Wazuh shared modules utils
- * Copyright (C) 2015-2020, Wazuh Inc.
+ * Copyright (C) 2021, INO Inc.
  * July 14, 2020.
  *
  * This program is free software; you can redistribute it
@@ -21,7 +21,7 @@ void ThreadDispatcherTest::TearDown() {};
 using ::testing::_;
 using namespace Utils;
 
-// LCOV_EXCL_START 
+// LCOV_EXCL_START
 class FunctorWrapper
 {
 public:

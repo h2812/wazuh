@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# Copyright (C) 2015-2020, Wazuh Inc.
+# Copyright (C) 2021, INO Inc.
 
 my $file;
 

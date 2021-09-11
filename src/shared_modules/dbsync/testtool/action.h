@@ -1,6 +1,6 @@
 /*
  * Wazuh DBSYNC
- * Copyright (C) 2015-2020, Wazuh Inc.
+ * Copyright (C) 2021, INO Inc.
  * July 21, 2020.
  *
  * This program is free software; you can redistribute it
@@ -75,7 +75,7 @@ struct UpdateWithSnapshotAction final : public IAction
     void execute(std::unique_ptr<TestContext>& ctx, const nlohmann::json& value) override
     {
         const std::unique_ptr<cJSON, TestDeleters::CJsonDeleter> currentSnapshotPtr
-        { 
+        {
             cJSON_Parse(value["body"].dump().c_str())
         };
         cJSON* snapshotLambda{ nullptr };
@@ -83,7 +83,7 @@ struct UpdateWithSnapshotAction final : public IAction
         {
             // Create and flush snapshot diff data in files like: snapshot_<#idx>.json
             const std::unique_ptr<cJSON, TestDeleters::ResultDeleter> snapshotLambdaPtr(snapshotLambda);
-            
+
             std::stringstream oFileName;
             oFileName << "action_" << ctx->currentId << ".json";
             const std::string outputFileName{ ctx->outputPath +"/"+oFileName.str() };
@@ -123,14 +123,14 @@ static void txnCallback(ReturnTypeCallback type, const cJSON* json, void* user_d
 
 struct CreateTransactionAction final : public IAction
 {
-    void execute(std::unique_ptr<TestContext>& ctx, 
+    void execute(std::unique_ptr<TestContext>& ctx,
                  const nlohmann::json& value) override
     {
         const std::unique_ptr<cJSON, TestDeleters::CJsonDeleter> jsonTables
-        { 
+        {
             cJSON_Parse(value["body"]["tables"].dump().c_str())
         };
-        
+
         callback_data_t callbackData { txnCallback, ctx.get() };
 
         ctx->txnContext = dbsync_create_txn(ctx->handle,
@@ -151,10 +151,10 @@ struct CreateTransactionAction final : public IAction
 
 struct CloseTransactionAction final : public IAction
 {
-    void execute(std::unique_ptr<TestContext>& ctx, 
+    void execute(std::unique_ptr<TestContext>& ctx,
                  const nlohmann::json& /*value*/) override
     {
-        
+
 
         const auto retVal { dbsync_close_txn(ctx->txnContext)} ;
 
@@ -236,13 +236,13 @@ struct GetDeletedRowsAction final : public IAction
 
         const auto& loggerContext { std::make_unique<GetCallbackLogger>(outputFileNameCallback) };
         callback_data_t callbackData { getCallbackCtx, loggerContext.get() } ;
-        
+
         const auto retVal
         {
             dbsync_get_deleted_rows(ctx->txnContext,
                                     callbackData)
         };
-        
+
         std::ofstream outputFile{ outputFileName };
         const nlohmann::json& jsonResult { {"dbsync_get_deleted_rows", retVal } };
         outputFile << jsonResult.dump() << std::endl;
@@ -676,7 +676,7 @@ struct SyncRowActionCPP final : public IAction
                 outputFile << jsonResult.dump() << std::endl;
             }
         };
- 
+
         int retVal { 0 };
 
         try

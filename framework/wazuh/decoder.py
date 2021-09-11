@@ -1,4 +1,4 @@
-# Copyright (C) 2015-2020, Wazuh Inc.
+# Copyright (C) 2021, INO Inc.
 # Created by Wazuh, Inc. <info@wazuh.com>.
 # This program is free software; you can redistribute it and/or modify it under the terms of GPLv2
 from os import remove
@@ -168,7 +168,7 @@ def get_decoder_file(filename: str, raw: bool = False) -> Union[str, AffectedIte
                 result.total_affected_items = 1
         except ExpatError as e:
             result.add_failed_item(id_=filename,
-                                   error=WazuhError(1501, extra_message=f"{join('WAZUH_HOME', decoder_path, filename)}:"     
+                                   error=WazuhError(1501, extra_message=f"{join('WAZUH_HOME', decoder_path, filename)}:"
                                                                         f" {str(e)}"))
         except OSError:
             result.add_failed_item(id_=filename,

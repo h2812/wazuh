@@ -1,4 +1,4 @@
-/* Copyright (C) 2015-2020, Wazuh Inc.
+/* Copyright (C) 2021, INO Inc.
  * All right reserved.
  *
  * This program is free software; you can redistribute it
@@ -106,5 +106,5 @@ int wm_task_manager_read(__attribute__((unused)) const OS_XML *xml, xml_node **n
     return 0;
 }
 
-#endif 
+#endif
 #endif

@@ -1,4 +1,4 @@
-/* Copyright (C) 2015-2020, Wazuh Inc.
+/* Copyright (C) 2021, INO Inc.
  * All right reserved.
  *
  * This program is free software; you can redistribute it
@@ -190,7 +190,7 @@ bool w_expression_match(w_expression_t * expression, const char * str_test, cons
             if (match_data = pcre2_match_data_create_from_pattern(expression->pcre2->code, NULL), !match_data) {
                 break;
             }
-            captured_groups = pcre2_match(expression->pcre2->code, (PCRE2_SPTR) str_test, 
+            captured_groups = pcre2_match(expression->pcre2->code, (PCRE2_SPTR) str_test,
                                           strlen(str_test), 0, 0, match_data, NULL);
 
             /* successful match */
@@ -307,7 +307,7 @@ const char * w_expression_get_regex_type(w_expression_t * expression) {
         case EXP_TYPE_PCRE2:
             retval = PCRE2_STR;
             break;
-        
+
         case EXP_TYPE_STRING:
             retval = STRING_STR;
             break;

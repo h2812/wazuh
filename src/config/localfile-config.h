@@ -1,4 +1,4 @@
-/* Copyright (C) 2015-2020, Wazuh Inc.
+/* Copyright (C) 2021, INO Inc.
  * Copyright (C) 2009 Trend Micro Inc.
  * All right reserved.
  *
@@ -76,7 +76,7 @@ typedef enum {
 
 /**
  * @brief Context of a multiline log that was not completely written.
- * 
+ *
  * An instance of w_multiline_timeout_ctxt_t allow save the context of a log that have not yet matched with the regex.
  */
 typedef struct {
@@ -171,7 +171,7 @@ void Free_Logreader(logreader * config);
 int Remove_Localfile(logreader **logf, int i, int gl, int fr, logreader_glob *globf);
 
 /**
- * @brief Get match attribute for multiline regex 
+ * @brief Get match attribute for multiline regex
  * @param node node to find match value
  * @retval ML_MATCH_START if match is "start" or if the attribute is not present
  * @retval ML_MATCH_ALL if match is "all"
@@ -180,7 +180,7 @@ int Remove_Localfile(logreader **logf, int i, int gl, int fr, logreader_glob *gl
 w_multiline_match_type_t w_get_attr_match(xml_node * node);
 
 /**
- * @brief Get replace attribute for multiline regex 
+ * @brief Get replace attribute for multiline regex
  * @param node node to find match value
  * @retval ML_REPLACE_NO_REPLACE if replace is "no-replace" or if the attribute is not present
  * @retval ML_REPLACE_WSPACE if replace is "wspace"

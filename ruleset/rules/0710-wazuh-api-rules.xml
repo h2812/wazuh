@@ -2,7 +2,7 @@
   -  WazuhAPI rules
   -  Author: Daniel Moreno
   -  Updated by Wazuh, Inc.
-  -  Copyright (C) 2015-2019, Wazuh Inc.
+  -  Copyright (C) 2021, INO Inc.
   -  This program is a free software; you can redistribute it and/or modify it under the terms of GPLv2.
 -->
 
@@ -19,7 +19,7 @@
     <regex>^WazuhAPI \d+-\d+-\d+ \d+:\d+:\d+ \S+: [(\S+)] \w+ \S+ - \d+</regex>
     <description>Wazuh API request received.</description>
   </rule>
-  
+
   <!-- Childs -->
 
     <rule id="30002" level="3">
@@ -113,7 +113,7 @@
       <match>Authentication error</match>
       <description>Authentication with api failed with the error $(auth_error) and the message: $(error_message).</description>
     </rule>
-  
+
   <!-- WazuhAPI 2019-03-18 16:08:13 user: Internal Error -->
     <rule id="30017" level="12">
       <if_sid>30000</if_sid>
@@ -153,7 +153,7 @@
       <if_sid>30000</if_sid>
       <match>Listening on</match>
       <description>Api is hearing at $(apiurl)</description>
-    </rule> 
+    </rule>
 
   <!-- WazuhAPI 2019-03-18 16:08:13 Error: Address in use (port "550"): Close the program using that port or change the port. -->
     <rule id="30023" level="10">

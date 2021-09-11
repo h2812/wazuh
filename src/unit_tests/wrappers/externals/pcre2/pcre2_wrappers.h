@@ -1,4 +1,4 @@
-/* Copyright (C) 2015-2020, Wazuh Inc.
+/* Copyright (C) 2021, INO Inc.
  * All rights reserved.
  *
  * This program is free software; you can redistribute it
@@ -24,7 +24,7 @@ pcre2_match_data_8 * wrap_pcre2_match_data_create_from_pattern(pcre2_code_8 * co
 #undef pcre2_match
 #define pcre2_match wrap_pcre2_match
 
-int pcre2_match(pcre2_code_8 * code_match_data, const PCRE2_UCHAR8 * str_test, 
+int pcre2_match(pcre2_code_8 * code_match_data, const PCRE2_UCHAR8 * str_test,
                 size_t strlen, int a, int b, pcre2_match_data_8 * match_data, void * aux);
 
 #undef pcre2_match_data_free

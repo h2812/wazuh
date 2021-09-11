@@ -1,4 +1,4 @@
-/* Copyright (C) 2015-2020, Wazuh Inc.
+/* Copyright (C) 2021, INO Inc.
  * Copyright (C) 2009 Trend Micro Inc.
  * All right reserved.
  *
@@ -238,7 +238,7 @@ cJSON *getClusterConfig(void) {
         free(buffer);
         close(sock);
         return NULL;
-                           
+
     case -1:
         merror("At wcom_main(): OS_RecvSecureClusterTCP(): %s", strerror(errno));
         free(buffer);

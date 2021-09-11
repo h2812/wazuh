@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2015-2020, Wazuh Inc.
+ * Copyright (C) 2021, INO Inc.
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General Public
@@ -31,7 +31,7 @@ DIR * wrap_opendir(const char *filename) {
             errno = ESRCH;
         }
 
-        return ret; 
+        return ret;
     } else {
         return opendir(filename);
     }

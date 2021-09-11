@@ -1,4 +1,4 @@
-/* Copyright (C) 2015-2020, Wazuh Inc.
+/* Copyright (C) 2021, INO Inc.
  * Copyright (C) 2009 Trend Micro Inc.
  * All rights reserved.
  *
@@ -82,7 +82,7 @@ STATIC OSDecoderNode *_OS_AddOSDecoder(OSDecoderNode *s_node, OSDecoderInfo *pi,
                     goto error;
                 }
 
-                if ((tmp_node->osdecoder->regex || tmp_node->osdecoder->plugindecoder) 
+                if ((tmp_node->osdecoder->regex || tmp_node->osdecoder->plugindecoder)
                     && (pi->regex || pi->plugindecoder)) {
                     tmp_node->osdecoder->get_next = 1;
                 } else {

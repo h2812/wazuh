@@ -1,13 +1,13 @@
 /*
  * Wazuh SyscollectorNormalizer
- * Copyright (C) 2015-2021, Wazuh Inc.
+ * Copyright (C) 2021, INO Inc.
  * January 12, 2021.
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General Public
  * License (version 2) as published by the FSF - Free Software
  * Foundation.
- */ 
+ */
 #ifndef _SYS_NORMALIZER_TEST_H
 #define _SYS_NORMALIZER_TEST_H
 #include "gtest/gtest.h"

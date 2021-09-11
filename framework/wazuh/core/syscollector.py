@@ -1,4 +1,4 @@
-# Copyright (C) 2015-2019, Wazuh Inc.
+# Copyright (C) 2021, INO Inc.
 # Created by Wazuh, Inc. <info@wazuh.com>.
 # This program is free software; you can redistribute it and/or modify it under the terms of GP
 
@@ -71,7 +71,7 @@ def get_valid_fields(element_type, agent_id=None):
                                          'rx.dropped': 'rx_dropped'}),
         Type.HOTFIXES: ('sys_hotfixes', {'scan_id': 'scan_id', 'scan_time': 'scan_time', 'hotfix': 'hotfix'})
     }
-    
+
     if element_type == Type.OS:
         agent_obj = Agent(agent_id)
         agent_obj.get_basic_information()

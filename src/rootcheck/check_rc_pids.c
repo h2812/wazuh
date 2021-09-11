@@ -1,4 +1,4 @@
-/* Copyright (C) 2015-2020, Wazuh Inc.
+/* Copyright (C) 2021, INO Inc.
  * Copyright (C) 2009 Trend Micro Inc.
  * All right reserved.
  *
@@ -47,13 +47,13 @@ static int proc_opendir(int pid)
     if (noproc) {
         return (0);
     }
-    
+
     dp  = opendir("/proc");
     if (!dp) {
         return 0;
     }
     closedir(dp);
-    
+
     snprintf(dir, OS_SIZE_1024, "/proc/%d", pid);
     dp  = opendir(dir);
     if (!dp) {

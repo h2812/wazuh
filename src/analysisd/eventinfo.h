@@ -1,4 +1,4 @@
-/* Copyright (C) 2015-2020, Wazuh Inc.
+/* Copyright (C) 2021, INO Inc.
  * Copyright (C) 2009 Trend Micro Inc.
  * All right reserved.
  *
@@ -202,7 +202,7 @@ void Free_Eventinfo(Eventinfo *lf);
 
 /**
  * @brief Clear the memory if the eventinfo was not added to the stateful memory
- * 
+ *
  * @param lf Eventinfo to free
  */
 void w_free_event_info(Eventinfo *lf);

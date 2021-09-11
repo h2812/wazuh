@@ -1,6 +1,6 @@
 /*
  * Wazuh DBSYNC
- * Copyright (C) 2015-2020, Wazuh Inc.
+ * Copyright (C) 2021, INO Inc.
  * June 11, 2020.
  *
  * This program is free software; you can redistribute it
@@ -28,7 +28,7 @@ namespace DbSync
         // LCOV_EXCL_START
         virtual ~IDbEngine() = default;
         // LCOV_EXCL_STOP
-    
+
         virtual void bulkInsert(const std::string& table,
                                 const nlohmann::json& data) = 0;
 
@@ -47,7 +47,7 @@ namespace DbSync
 
         virtual void deleteRowsByStatusField(const nlohmann::json& tableNames) = 0;
 
-        virtual void returnRowsMarkedForDelete(const nlohmann::json& tableNames, 
+        virtual void returnRowsMarkedForDelete(const nlohmann::json& tableNames,
                                                const DbSync::ResultCallback callback) = 0;
 
         virtual void selectData(const std::string& table,

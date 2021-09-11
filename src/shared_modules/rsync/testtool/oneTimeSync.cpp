@@ -1,6 +1,6 @@
 /*
  * Wazuh RSYNC
- * Copyright (C) 2015-2020, Wazuh Inc.
+ * Copyright (C) 2021, INO Inc.
  * September 18, 2020.
  *
  * This program is free software; you can redistribute it
@@ -26,8 +26,8 @@ DBSYNC_HANDLE getDbsyncHandle(const nlohmann::json& config)
     const std::string dbType{ config.at("db_type").get_ref<const std::string&>() };
     const std::string hostType{ config.at("host_type").get_ref<const std::string&>() };
     const std::string sqlStmt{ config.at("sql_statement").get_ref<const std::string&>() };
-    auto handle 
-    { 
+    auto handle
+    {
         dbsync_create((hostType.compare("0") == 0) ? HostType::MANAGER : HostType::AGENT,
                         (dbType.compare("1") == 0) ? DbEngineType::SQLITE3 : DbEngineType::UNDEFINED,
                         dbName.c_str(),

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Copyright (C) 2015-2021, Wazuh Inc.
+# Copyright (C) 2021, INO Inc.
 
 WAZUH_HOME=${1}
 WAZUH_VERSION=${2}

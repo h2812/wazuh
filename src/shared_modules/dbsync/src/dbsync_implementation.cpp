@@ -1,6 +1,6 @@
 /*
  * Wazuh DBSYNC
- * Copyright (C) 2015-2020, Wazuh Inc.
+ * Copyright (C) 2021, INO Inc.
  * June 11, 2020.
  *
  * This program is free software; you can redistribute it
@@ -121,7 +121,7 @@ TXN_HANDLE DBSyncImplementation::createTransaction(const DBSYNC_HANDLE      hand
     };
     ctx->addTransactionContext(spTransactionContext);
     ctx->m_dbEngine->initializeStatusField(spTransactionContext->m_tables);
-    
+
     return spTransactionContext.get();
 }
 
@@ -130,12 +130,12 @@ void DBSyncImplementation::closeTransaction(const DBSYNC_HANDLE handle,
 {
     const auto& ctx{ dbEngineContext(handle) };
     const auto& tnxCtx { ctx->transactionContext(txn) };
-    
+
     ctx->m_dbEngine->deleteRowsByStatusField(tnxCtx->m_tables);
     ctx->deleteTransactionContext(txn);
 }
 
-void DBSyncImplementation::getDeleted(const DBSYNC_HANDLE   handle, 
+void DBSyncImplementation::getDeleted(const DBSYNC_HANDLE   handle,
                                       const TXN_HANDLE      txnHandle,
                                       const ResultCallback  callback)
 {
@@ -145,7 +145,7 @@ void DBSyncImplementation::getDeleted(const DBSYNC_HANDLE   handle,
     ctx->m_dbEngine->returnRowsMarkedForDelete(tnxCtx->m_tables, callback);
 }
 
-void DBSyncImplementation::selectData(const DBSYNC_HANDLE   handle, 
+void DBSyncImplementation::selectData(const DBSYNC_HANDLE   handle,
                                       const nlohmann::json& json,
                                       const ResultCallback& callback)
 {
@@ -155,7 +155,7 @@ void DBSyncImplementation::selectData(const DBSYNC_HANDLE   handle,
                                 callback);
 }
 
-void DBSyncImplementation::addTableRelationship(const DBSYNC_HANDLE   handle, 
+void DBSyncImplementation::addTableRelationship(const DBSYNC_HANDLE   handle,
                                                 const nlohmann::json& json)
 {
     const auto ctx{ dbEngineContext(handle) };

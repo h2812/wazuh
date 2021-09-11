@@ -1,4 +1,4 @@
-# Copyright (C) 2015-2020, Wazuh Inc.
+# Copyright (C) 2021, INO Inc.
 # Created by Wazuh, Inc. <info@wazuh.com>.
 # This program is free software; you can redistribute it and/or modify it under the terms of GPLv2
 
@@ -443,12 +443,12 @@ class DistributedAPI:
 
         async def clean_valid_nodes(nodes_to_clean: List[Tuple]) -> List[Tuple]:
             """Clean nodes response to forward only to real nodes in a single petition for each one.
-    
+
             Parameters
             ----------
             nodes_to_clean : list
                 List of nodes to clean.
-    
+
             Returns
             -------
             list

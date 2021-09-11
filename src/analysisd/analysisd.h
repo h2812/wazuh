@@ -1,4 +1,4 @@
-/* Copyright (C) 2015-2020, Wazuh Inc.
+/* Copyright (C) 2021, INO Inc.
  * Copyright (C) 2009 Trend Micro Inc.
  * All right reserved.
  *
@@ -75,14 +75,14 @@ size_t asyscom_getconfig(const char * section, char ** output);
 
 /**
  * @brief Get the number of elements divided by the size of queues
- * 
+ *
  * Values are save in state's variables
  */
 void w_get_queues_size();
 
 /**
  * @brief Obtains analysisd's queues sizes
- * 
+ *
  * Values are save in state's variables
  */
 void w_get_initial_queues_size();

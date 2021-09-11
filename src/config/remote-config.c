@@ -1,4 +1,4 @@
-/* Copyright (C) 2015-2020, Wazuh Inc.
+/* Copyright (C) 2021, INO Inc.
  * Copyright (C) 2009 Trend Micro Inc.
  * All rights reserved.
  *
@@ -22,7 +22,7 @@
 /**
  * @brief gets the remoted protocol configuration from a configuration string
  * @param content configuration string
- * @return returns the TCP/UDP protocol configuration 
+ * @return returns the TCP/UDP protocol configuration
  */
 STATIC int w_remoted_get_net_protocol(const char * content);
 
@@ -158,7 +158,7 @@ int Read_Remote(XML_NODE node, void *d1, __attribute__((unused)) void *d2)
                 return (OS_INVALID);
             }
         } else if (strcasecmp(node[i]->element, xml_remote_proto) == 0) {
-            
+
             logr->proto[pl] = w_remoted_get_net_protocol(node[i]->content);
 
         } else if (strcasecmp(node[i]->element, xml_remote_ipv6) == 0) {

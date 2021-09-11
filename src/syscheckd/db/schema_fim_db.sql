@@ -1,6 +1,6 @@
 /*
  * SQL Schema for FIM database
- * Copyright (C) 2015-2020, Wazuh Inc.
+ * Copyright (C) 2021, INO Inc.
  *
  * This program is a free software, you can redistribute it
  * and/or modify it under the terms of GPLv2.

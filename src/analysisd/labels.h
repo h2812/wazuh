@@ -1,6 +1,6 @@
 /*
  * Label data cache
- * Copyright (C) 2015-2020, Wazuh Inc.
+ * Copyright (C) 2021, INO Inc.
  * February 27, 2017.
  *
  * This program is free software; you can redistribute it
@@ -27,7 +27,7 @@ void labels_finalize();
 
 /**
  * @brief Finds the label array of an agent that generated an event.
- * 
+ *
  * @param agent_id The ID of the agent for whom the labels are requested.
  * @param sock The Wazuh DB socket connection.
  * @retval The agent's labels array on success. NULL on error.

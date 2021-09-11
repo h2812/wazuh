@@ -1,6 +1,6 @@
 /*
  * Wazuh RSYNC
- * Copyright (C) 2015-2020, Wazuh Inc.
+ * Copyright (C) 2021, INO Inc.
  * Sep 08, 2020.
  *
  * This program is free software; you can redistribute it
@@ -83,8 +83,8 @@ public:
                   << "Options:\n"
                   << "\t-h \t\t\tShow this help message\n"
                   << "\t-u DB_UPDATE_PERIOD\tSpecifies the database update period.\n"
-                  << "\t-o OUTPUT_FOLDER\tSpecifies the output folder path where the data bases will be generated.\n"         
-                  << "\t-i INPUT_DATA\tSpecifies the input data that will be used to excercise the rsync/dbsync libraries.\n"         
+                  << "\t-o OUTPUT_FOLDER\tSpecifies the output folder path where the data bases will be generated.\n"
+                  << "\t-i INPUT_DATA\tSpecifies the input data that will be used to excercise the rsync/dbsync libraries.\n"
                   << "\nExample:"
                   << "\n\t./rsync_test_tool -u 1000 -o ./output\n"
                   << "\n\t./rsync_test_tool -i input.json -o ./output\n"

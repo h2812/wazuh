@@ -1,4 +1,4 @@
-# Copyright (C) 2015-2020, Wazuh Inc.
+# Copyright (C) 2021, INO Inc.
 # Created by Wazuh, Inc. <info@wazuh.com>.
 # This program is a free software; you can redistribute it and/or modify it under the terms of GPLv2
 
@@ -234,7 +234,7 @@ async def get_file(request, pretty: bool = False, wait_for_complete: bool = Fals
 
 async def put_file(request, body, filename=None, overwrite=False, pretty=False, wait_for_complete=False):
     """Upload a rule file.
-    
+
     Parameters
     ----------
     body : dict

@@ -1,7 +1,7 @@
 <!--
   -  Junos decoders
   -  Updated by Wazuh, Inc.
-  -  Copyright (C) 2015-2020, Wazuh Inc.
+  -  Copyright (C) 2021, INO Inc.
   -  This program is a free software; you can redistribute it and/or modify it under the terms of GPLv2.
 -->
 
@@ -271,4 +271,4 @@ Sep 21 15:25:06 192.168.1.1 junos-flow: 2017-09-21T15:25:06.141Z sis-srx-ICP-01 
     <parent>junos-rt-flow</parent>
     <regex offset="after_parent">protocol-name="(\S+)"]</regex>
     <order>protocol_name</order>
-</decoder> 
+</decoder>

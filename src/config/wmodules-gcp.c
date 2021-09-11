@@ -1,4 +1,4 @@
-/* Copyright (C) 2015-2019, Wazuh Inc.
+/* Copyright (C) 2021, INO Inc.
  * All right reserved.
  *
  * This program is free software; you can redistribute it
@@ -158,14 +158,14 @@ int wm_gcp_read(xml_node **nodes, wmodule *module) {
                 merror("Invalid content for tag '%s'", XML_LOGGING);
                 return OS_INVALID;
             }
-        } 
+        }
         else if (is_sched_tag(nodes[i]->element)) {
             // Do nothing
         } else {
-            merror("No such tag '%s' at module '%s'.", nodes[i]->element, WM_GCP_CONTEXT.name);	
+            merror("No such tag '%s' at module '%s'.", nodes[i]->element, WM_GCP_CONTEXT.name);
             return OS_INVALID;
         }
-        
+
     }
 
     const int sched_read = sched_scan_read(&(gcp->scan_config), nodes, module->context->name);

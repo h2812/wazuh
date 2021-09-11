@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2015-2020, Wazuh Inc.
+ * Copyright (C) 2021, INO Inc.
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General Public
@@ -25,7 +25,7 @@ typedef struct _mocked_log {
     char* merror;
     char* mwarn;
     char* minfo;
-    char* mdebug;    
+    char* mdebug;
 } mocked_log;
 
 //Sets all the expected log messages
@@ -81,7 +81,7 @@ parse_evaluator parse_values_default_cfg []={
     { "OSSEC PASS: pass124 OSSEC A:'agent0'", "192.0.0.1", NULL,        {NULL, NULL, NULL}, {OS_INVALID,"ERROR: Invalid request for new agent"}, {"Invalid request for new agent from: 192.0.0.1", NULL, NULL, NULL} },
     { "OSSEC A:''", "192.0.0.1", NULL,                                  {NULL, NULL, NULL}, {OS_INVALID,"ERROR: Invalid agent name: "},          {"Invalid agent name:  from 192.0.0.1", NULL, "Received request for a new agent () from: 192.0.0.1", NULL} },
     { "OSSEC A:'inv;agent'", "192.0.0.1", NULL,                         {NULL, NULL, NULL}, {OS_INVALID,"ERROR: Invalid agent name: inv;agent"}, {"Invalid agent name: inv;agent from 192.0.0.1", NULL, "Received request for a new agent (inv;agent) from: 192.0.0.1", NULL} },
-    
+
     {0}
 };
 
@@ -110,24 +110,24 @@ int setup_parse_use_src_ip_cfg_0(void **state) {
 /* tests */
 extern w_err_t w_auth_parse_data(const char* buf, char *response, const char *authpass, char *ip, char **agentname, char **groups);
 
-static void test_w_auth_parse_data(void **state) {    
+static void test_w_auth_parse_data(void **state) {
 
     char response[2048] = {0};
     char ip[IPSIZE + 1];
     char *agentname = NULL;
-    char *groups = NULL;    
+    char *groups = NULL;
     w_err_t err;
-    
+
     for(unsigned i=0; parse_values[i].buffer; i++) {
         set_expected_log(&parse_values[i].expected_log);
         response[0] = '\0';
-        strncpy(ip, parse_values[i].src_ip, IPSIZE);   
+        strncpy(ip, parse_values[i].src_ip, IPSIZE);
 
         err = w_auth_parse_data(parse_values[i].buffer, response, parse_values[i].pass, ip, &agentname, &groups);
-        
+
         assert_int_equal(err, parse_values[i].expected_response.err);
         if(err == OS_SUCCESS) {
-            assert_string_equal(ip, parse_values[i].expected_params.ip);            
+            assert_string_equal(ip, parse_values[i].expected_params.ip);
             assert_string_equal(agentname, parse_values[i].expected_params.name);
             if(groups){
                 assert_string_equal(groups, parse_values[i].expected_params.groups);
@@ -139,18 +139,18 @@ static void test_w_auth_parse_data(void **state) {
         else {
             assert_string_equal(response, parse_values[i].expected_response.response);
         }
-        
+
         os_free(agentname);
         os_free(groups);
 
-    }    
+    }
 }
 
-int main(void) {     
+int main(void) {
     const struct CMUnitTest tests[] = {
         /* w_auth_parse_data tests*/
         cmocka_unit_test_setup(test_w_auth_parse_data, setup_parse_default),
-        cmocka_unit_test_setup(test_w_auth_parse_data, setup_parse_use_src_ip_cfg_0),        
+        cmocka_unit_test_setup(test_w_auth_parse_data, setup_parse_use_src_ip_cfg_0),
     };
 
     return cmocka_run_group_tests(tests, NULL, NULL);

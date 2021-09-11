@@ -1,6 +1,6 @@
 /*
  * Wazuh SYSINFO
- * Copyright (C) 2015-2020, Wazuh Inc.
+ * Copyright (C) 2021, INO Inc.
  * October 24, 2020.
  *
  * This program is free software; you can redistribute it
@@ -50,7 +50,7 @@ public:
     {
         return FactoryBSDNetwork::create(interfaceWrapper);
     }
-};    
+};
 
 template <>
 class FactoryNetworkFamilyCreator<OSType::WINDOWS> final
@@ -60,6 +60,6 @@ public:
     {
         return FactoryWindowsNetwork::create(interfaceWrapper);
     }
-};    
+};
 
 #endif // _NETWORK_FAMILY_DATA_AFACTORY_H

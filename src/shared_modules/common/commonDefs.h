@@ -1,6 +1,6 @@
 /*
  * Wazuh DBSYNC
- * Copyright (C) 2015-2020, Wazuh Inc.
+ * Copyright (C) 2021, INO Inc.
  * June 11, 2020.
  *
  * This program is free software; you can redistribute it
@@ -17,7 +17,7 @@
 /**
  * @brief Represents the different host types to be used.
  */
-typedef enum 
+typedef enum
 {
     MANAGER = 0,
     AGENT   = 1
@@ -26,7 +26,7 @@ typedef enum
 /**
  * @brief Represents the database type to be used.
  */
-typedef enum 
+typedef enum
 {
     UNDEFINED = 0,  /*< Undefined database. */
     SQLITE3   = 1,  /*< SQLite3 database.   */
@@ -35,7 +35,7 @@ typedef enum
 /**
  * @brief Represents the database operation events.
  */
-typedef enum 
+typedef enum
 {
     MODIFIED = 0,   /*< Database modificaton operation.         */
     DELETED  = 1,   /*< Database deletion operation.            */
@@ -96,13 +96,13 @@ typedef struct
     /*@}*/
 } callback_data_t;
 
-/** 
+/**
  *  @struct sync_callback_data_t
  *  This struct contains a callback used to synchronize the information between agent and manager
  *  and user data space returned in each callback call.
  *  The instance of this structure lives in the library's consumer ecosystem.
  */
-typedef struct 
+typedef struct
 {
     /*@{*/
     sync_id_callback_t callback;     /**< Sync ID callback. */
